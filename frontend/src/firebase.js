@@ -1,7 +1,10 @@
+
+// src/firebase.js
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
+// Configuración de Firebase (reemplaza con tus credenciales)
 const firebaseConfig = {
   // Reemplaza con tus credenciales de Firebase
     apiKey: "AIzaSyAuf1ngh3x1K6oXqIf9wQgkEcgL2i0MJ1I",
@@ -13,6 +16,12 @@ const firebaseConfig = {
   measurementId: "G-L4NV8H8D4M"
 };
 
+// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+
+// Inicializar Auth y Firestore
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// Exportar las instancias
+export { auth, db };
